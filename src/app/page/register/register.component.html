@@ -1,0 +1,21 @@
+<div class="container">
+  <form #registerForm="ngForm" (submit)="onRegister()">
+    <div class="form-group">
+      <label for="userCode">User Code</label>
+      <input type="text" class="form-control" id="userCode" [(ngModel)]="register.userCode" name="userCode" required>
+    </div>
+    <div class="form-group">
+      <label for="userPwd">Password</label>
+      <input type="password" class="form-control" id="userPwd" [(ngModel)]="register.userPwd" name="userPwd" required>
+    </div>
+    <div class="form-group">
+      <label for="userFirstName">First Name</label>
+      <input type="text" class="form-control" id="userFirstName" [(ngModel)]="register.userFirstName" name="userFirstName" required>
+    </div>
+    <div class="form-group">
+      <label for="userLastName">Last Name</label>
+      <input type="text" class="form-control" id="userLastName" [(ngModel)]="register.userLastName" name="userLastName" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>

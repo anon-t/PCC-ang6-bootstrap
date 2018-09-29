@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-color">
+  <a class="navbar-brand" href="#">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Training Angular 6 at PCC
+  </a>
+  <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">
+      Language <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><a class="dropdown-item" (click)="changeLanguage('en')">EN</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="changeLanguage('th')">TH</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

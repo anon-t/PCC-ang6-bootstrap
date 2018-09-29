@@ -1,0 +1,16 @@
+<div class="stepwizard">
+  <div class="stepwizard-row">
+      <div class="stepwizard-step">
+          <button type="button" class="btn btn-circle" (click)="onStepClick('one')" [ngClass]="stepClass[0]">1</button>
+          <p>Step One</p>
+      </div>
+      <div class="stepwizard-step">
+          <button type="button" class="btn btn-circle" (click)="onStepClick('two')" [ngClass]="stepClass[1]" [disabled]="step > 1 ? false : true">2</button>
+          <p>Step Two</p>
+      </div>
+      <div class="stepwizard-step">
+          <button type="button" class="btn btn-circle" (click)="onStepClick('three')" [ngClass]="stepClass[2]" [disabled]="step > 2 ? false : true">3</button>
+          <p>Step Three</p>
+      </div>
+  </div>
+</div>

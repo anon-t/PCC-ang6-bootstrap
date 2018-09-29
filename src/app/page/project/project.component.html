@@ -1,0 +1,40 @@
+<div class="container">
+  <form class="form-inline" style="margin-top: 25px;">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="projName" class="sr-only">Project Name</label>
+      <input type="text" class="form-control" id="projName" name="projName" [(ngModel)]="projSearch.projName">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" (click)="onSearchProj()">Search</button>
+    <button type="button" class="btn btn-success mb-2" routerLink="/admin/project-form/0" style="margin-left: 10px;">Add</button>
+  </form>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Project Code</th>
+        <th scope="col">Project Name</th>
+        <th scope="col">IMG</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Del.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of project">
+        <td>{{i.projCode}}</td>
+        <td>{{i.projName}}</td>
+        <td><img [src]="imgUrl+i.projCode+'/'+i.projImage" width="100"></td>
+        <td>
+          <button class="btn btn-warning" type="button" routerLink="/admin/project-form/{{i.pkCode}}" >Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-danger" type="button" (click)="onDelProj(i.pkCode)">Del.</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-xs-12 col-12">
+      <pagination [totalItems]="totalItems" [itemsPerPage]="projSearch.rowPerPage" [(ngModel)]="currentPage" (pageChanged)="onPageChange($event)"></pagination>
+    </div>
+  </div>
